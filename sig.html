@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sirius MTP – Ethical Mining Toolkit</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --gold: #d4af37;
+      --black: #000000;
+      --white: #ffffff;
+      --light-grey: #f2f2f2;
+      --dark-grey: #555555;
+      --blue: #007bff;
+      --green: #28a745;
+      --glass-bg: rgba(255, 255, 255, 0.15);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif }
+    body { background: var(--light-grey); color: var(--dark-grey); line-height:1.6 }
+    header {
+      background: linear-gradient(to right, var(--gold), var(--black));
+      color: var(--white); padding:1rem 2rem;
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+    }
+    nav a { color: var(--white); text-decoration:none; margin:0 1rem; font-weight:500 }
+    nav a:hover { color: var(--blue) }
+    .container { max-width:1200px; margin:2rem auto; padding:0 1rem }
+    h2 { font-size:1.8rem; margin-bottom:.5rem; color: var(--black); display:flex; align-items:center }
+    h2 i { margin-right:.5rem; color: var(--gold) }
+    p { margin-bottom:1rem }
+    ul { list-style:none; padding-left:1.2rem; margin-bottom:1rem }
+    ul li {
+      margin-bottom:.5rem; position:relative; padding-left:1.5rem
+    }
+    ul li::before {
+      content:"\f058"; font-family:"Font Awesome 6 Free"; font-weight:900;
+      position:absolute; left:0; color: var(--green)
+    }
+    .hero {
+      background:url('artisanalminer.jpeg')no-repeat center/cover;
+      height:400px; display:flex; align-items:center; justify-content:center; text-align:center;
+      margin-bottom:2rem; position:relative
+    }
+    .hero .overlay {
+      background: var(--glass-bg); backdrop-filter:blur(5px);
+      padding:2rem; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.25);
+      border:1px solid rgba(255,255,255,0.2); color: var(--white)
+    }
+    section { margin-bottom:3rem }
+    form {
+      background: var(--white); padding:1.5rem; border-radius:12px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1); display:grid; gap:1rem
+    }
+    input, select {
+      padding:.8rem; border:1px solid #ccc; border-radius:8px; font-size:1rem; width:100%
+    }
+    button {
+      padding:.8rem; background: var(--gold); border:none; border-radius:8px;
+      font-weight:700; cursor:pointer; transition:background .3s
+    }
+    button:hover { background:#b08e2f }
+    /* Map + Search */
+    .map-container {
+      position:relative; height:450px; margin-bottom:1.5rem; border-radius:10px; overflow:hidden
+    }
+    #map-search {
+      position:absolute; top:10px; left:50%; transform:translateX(-50%); z-index:5;
+      display:flex; width:320px
+    }
+    #map-search input {
+      flex:1; padding:.6rem; border:1px solid #ccc; border-radius:4px 0 0 4px; outline:none
+    }
+    #map-search button {
+      padding:.6rem 1rem; border:none; background: var(--blue); color:#fff; border-radius:0 4px 4px 0;
+      cursor:pointer
+    }
+    #map { height:100%; width:100%; }
+    .card-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem
+    }
+    .card {
+      background: var(--white); padding:1rem; border-radius:10px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.1)
+    }
+    .card h3 {
+      display:flex; align-items:center; margin-bottom:.5rem; color: var(--black)
+    }
+    .card h3 i { margin-right:.5rem; color: var(--blue) }
+    .bottom-hero {
+      background:url('mining.jpeg')no-repeat center/cover;
+      height:280px; display:flex; align-items:center; justify-content:center; text-align:center;
+      margin-top:2rem; position:relative
+    }
+    .bottom-hero .overlay {
+      background: var(--glass-bg); backdrop-filter:blur(4px); padding:1.5rem;
+      border-radius:12px; border:1px solid rgba(255,255,255,0.2); color: var(--white)
+    }
+    footer {
+      background:linear-gradient(to right, var(--black), var(--gold));
+      color: var(--white); text-align:center; padding:1rem; margin-top:2rem
+    }
+    @media(max-width:768px){
+      header{flex-direction:column;text-align:center;}
+      .hero,.bottom-hero{height:250px;}
+      #map-search{width:80%;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-diamond"></i> Sirius MTP</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#signup">Sign Up</a>
+      <a href="#cooperative">Cooperatives</a>
+      <a href="#tools">Toolkit</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="overlay">
+      <h2><i class="fas fa-mountain"></i> Empowering Zambia’s Miners</h2>
+      <p>Ethical • Sustainable • Digitally Formalized</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- About -->
+    <section id="about">
+      <h2><i class="fas fa-info-circle"></i> About the Toolkit</h2>
+      <p>Sirius MTP is Zambia’s digital framework for formalizing artisanal and small-scale mining through technology, training, and cooperative support.</p>
+      <ul>
+        <li>Digital Miner IDs & Plot Verification</li>
+        <li>Mercury-Free Training & PPE Kits</li>
+        <li>Production & Sales Logging</li>
+        <li>Cooperative Membership & Micro-Finance</li>
+        <li>Buyer Matching & Market Access</li>
+      </ul>
+    </section>
+
+    <!-- Sign Up -->
+    <section id="signup">
+      <h2><i class="fas fa-user-plus"></i> Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" name="fullname" placeholder="Full Name" required/>
+        <input type="email" name="email" placeholder="Email Address" required/>
+        <select name="role" required>
+          <option value="">Select Role</option>
+          <option value="miner">Artisanal Miner</option>
+          <option value="ngo">Support Org</option>
+          <option value="officer">Mining Officer</option>
+        </select>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Register</button>
+      </form>
+    </section>
+
+    <!-- Cooperative -->
+    <section id="cooperative">
+      <h2><i class="fas fa-handshake"></i> Join a Cooperative</h2>
+      <p>Find and join verified cooperatives for legal rights, shared equipment, training, and financial support.</p>
+      <div class="map-container">
+        <div id="map-search">
+          <input id="address" type="text" placeholder="Enter location or cooperative name"/>
+          <button id="addr-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div id="map"></div>
+      </div>
+      <form id="joinForm">
+        <input type="text" name="name" placeholder="Your Full Name" required/>
+        <input type="email" name="email" placeholder="Email Address" required/>
+        <input type="text" name="location" placeholder="District / Province" required/>
+        <select name="coop" required>
+          <option value="">Select Cooperative</option>
+          <option value="lusaka">Lusaka Cooperative</option>
+          <option value="copperbelt">Copperbelt Mining Union</option>
+          <option value="northwest">Emerald Cluster NW</option>
+        </select>
+        <button type="submit"><i class="fas fa-check-circle"></i> Apply to Join</button>
+      </form>
+    </section>
+
+    <!-- Toolkit -->
+    <section id="tools">
+      <h2><i class="fas fa-toolbox"></i> Full Formalization Toolkit</h2>
+      <div class="card-grid">
+        <div class="card"><h3><i class="fas fa-id-badge"></i> Digital Miner ID</h3><p>Secure digital identity and official license.</p></div>
+        <div class="card"><h3><i class="fas fa-file-signature"></i> Simplified Licensing</h3><p>Mobile kiosk & field agent support.</p></div>
+        <div class="card"><h3><i class="fas fa-tools"></i> Mercury-Free Extraction</h3><p>Subsidized retorts & gravimetric kits.</p></div>
+        <div class="card"><h3><i class="fas fa-chart-line"></i> Production Logs</h3><p>Real-time output & revenue tracking.</p></div>
+        <div class="card"><h3><i class="fas fa-hand-holding-usd"></i> Financial Access</h3><p>Microloans & equipment financing.</p></div>
+        <div class="card"><h3><i class="fas fa-book-open"></i> Training & Safety</h3><p>Guides & videos in local languages.</p></div>
+        <div class="card"><h3><i class="fas fa-globe"></i> Buyer Matching</h3><p>Ethical local & international buyers.</p></div>
+        <div class="card"><h3><i class="fas fa-users"></i> Community Support</h3><p>Chiefs & conflict mediation.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bottom Hero -->
+  <div class="bottom-hero">
+    <div class="overlay">
+      <h2><i class="fas fa-hand-holding-heart"></i> Together We Formalize</h2>
+      <p>From rural potential to global markets—powered by Sirius MTP.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sirius MTP | MD Technologies Zambia | All Rights Reserved</p>
+  </footer>
+
+  <!-- Google Maps + Geocoder -->
+  <script>
+    let map, geocoder, marker;
+    function initMap() {
+      const zambia = { lat: -13.133897, lng: 27.849332 };
+      map = new google.maps.Map(document.getElementById('map'), { center: zambia, zoom: 6 });
+      geocoder = new google.maps.Geocoder();
+      marker = new google.maps.Marker({ map: map });
+
+      document.getElementById('addr-btn').addEventListener('click', () => {
+        const address = document.getElementById('address').value;
+        if (!address) return;
+        geocoder.geocode({ address: address + ', Zambia' }, (results, status) => {
+          if (status === 'OK' && results[0]) {
+            map.setCenter(results[0].geometry.location);
+            marker.setPosition(results[0].geometry.location);
+            map.setZoom(12);
+          } else {
+            alert('Location not found: ' + status);
+          }
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('signupForm').addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Registration successful! Confirmation sent.');
+        e.target.reset();
+      });
+      document.getElementById('joinForm').addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Cooperative application submitted.');
+        e.target.reset();
+      });
+    });
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
